@@ -1,0 +1,7 @@
+{
+	"name": "lemon",
+	"build": {
+		"context": "..",
+		"dockerfile": "Dockerfile"
+	}
+}
