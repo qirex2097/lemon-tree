@@ -233,6 +233,7 @@ void editorAppendRow(char *s, size_t len) {
 void editorOpen(char *filename) {
     free(E.filename);
     E.filename = strdup(filename);
+    if (E.filename == NULL) die("strdup");
     
     FILE *fp = fopen(filename, "r");
     if (!fp) die("fopen");
