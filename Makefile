@@ -1,2 +1,10 @@
+CC = gcc
+CFLAGS = -Wall -Wextra -pedantic -std=c99
+
 kilo: kilo.c
-	$(CC) -g kilo.c -o kilo -Wall -Wextra -pedantic -std=c99
+	$(CC) $(CFLAGS) -g kilo.c -o kilo 
+	
+.PHONY: clean
+	
+clean:
+	rm -rf kilo
