@@ -6,6 +6,7 @@
                 "${workspaceFolder}/**",
                 "/usr/include/**"
             ],
+            "compilerPath": "/usr/bin/gcc",
             "defines": [],
             "cStandard": "c17",
             "cppStandard": "gnu++17",
