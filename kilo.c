@@ -561,7 +561,12 @@ char *editorPrompt(char *prompt) {
         } else if (!iscntrl(c) && c < 128) {
             if (buflen == bufsize - 1) {
                 bufsize *= 2;
-                buf = realloc(buf, bufsize);
+                char *new_buf = realloc(buf, bufsize);
+                if (new_buf == NULL) {
+                    free(buf);
+                    die("realloc");
+                }
+                buf = new_buf;
             }
             buf[buflen++] = c;
             buf[buflen] = '\0';
